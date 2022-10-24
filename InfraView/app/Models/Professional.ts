@@ -3,6 +3,10 @@ import { BaseModel, belongsTo, BelongsTo, column } from '@ioc:Adonis/Lucid/Orm'
 import User from './User'
 
 export default class Professional extends BaseModel {
+  public static get fillable() {
+    return ['registration']
+  }
+
   @belongsTo(() => User)
   public user: BelongsTo<typeof User>
 
