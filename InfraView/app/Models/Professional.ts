@@ -1,16 +1,16 @@
 import { DateTime } from 'luxon'
-import { BaseModel, column } from '@ioc:Adonis/Lucid/Orm'
+import { BaseModel, belongsTo, BelongsTo, column } from '@ioc:Adonis/Lucid/Orm'
+import User from './User'
 
-export default class Person extends BaseModel {
-  public static get fillable() {
-    return ['cpf']
-  }
+export default class Professional extends BaseModel {
+  @belongsTo(() => User)
+  public user: BelongsTo<typeof User>
 
   @column({ isPrimary: true })
   public id: number
 
   @column()
-  public cpf: string
+  public registration: string
 
   @column.dateTime({ autoCreate: true })
   public createdAt: DateTime

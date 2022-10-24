@@ -1,16 +1,16 @@
 import { DateTime } from 'luxon'
 import { BaseModel, column } from '@ioc:Adonis/Lucid/Orm'
 
-export default class Person extends BaseModel {
+export default class User extends BaseModel {
   public static get fillable() {
-    return ['cpf']
+    return ['registration']
   }
 
   @column({ isPrimary: true })
   public id: number
 
   @column()
-  public cpf: string
+  public registration: string
 
   @column.dateTime({ autoCreate: true })
   public createdAt: DateTime
