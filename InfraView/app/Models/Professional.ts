@@ -4,7 +4,7 @@ import User from './User'
 
 export default class Professional extends BaseModel {
   public static get fillable() {
-    return ['registration']
+    return ['registration', 'user_id']
   }
 
   @belongsTo(() => User)
@@ -15,6 +15,9 @@ export default class Professional extends BaseModel {
 
   @column()
   public registration: string
+
+  @column()
+  public user_id: number
 
   @column.dateTime({ autoCreate: true })
   public createdAt: DateTime

@@ -9,10 +9,11 @@ export default class ProfessionalsController {
   }
 
   public async store({ request }: HttpContextContract) {
-    const data = request.only(['registration'])
+    const data = request.only(['registration', 'user_id'])
 
-    const professional = await Professional.create(data)
+    let professional = await Professional.create(data)
 
+    console.log(professional.toJSON())
     return professional
   }
 
