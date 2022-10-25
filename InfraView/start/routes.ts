@@ -23,3 +23,7 @@ Route.group(() => {
 Route.group(() => {
   Route.resource('buildings', 'BuildingsController')
 })
+
+Route.group(() => {
+  Route.resource('sectors', 'SectorsController')
+})
