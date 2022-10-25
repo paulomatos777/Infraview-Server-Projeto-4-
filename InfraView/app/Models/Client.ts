@@ -3,6 +3,12 @@ import { BaseModel, belongsTo, BelongsTo, column } from '@ioc:Adonis/Lucid/Orm'
 import User from './User'
 
 export default class Client extends BaseModel {
+  public static get fillable() {
+    return ['user_id']
+  }
+  @column()
+  public user_id: number
+
   @column({ isPrimary: true })
   public id: number
 

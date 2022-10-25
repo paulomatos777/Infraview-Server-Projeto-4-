@@ -31,3 +31,7 @@ Route.group(() => {
 Route.group(() => {
   Route.resource('professionals', 'ProfessionalsController')
 })
+
+Route.group(() => {
+  Route.resource('clients', 'ClientsController')
+})
